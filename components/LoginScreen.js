@@ -40,15 +40,11 @@ const LoginScreen = ({ navigation }) => {
       navigation.navigate('Home');
     } catch (error) {
       console.log(error.code);
-      let message = "asdasd"
       // Xử lý lỗi đăng nhập ở đây
       if (error.code === 'auth/invalid-credential'|| error.code === 'auth/wrong-password') {
-        Alert.alert('Lỗi', 'Tài khoản không tồn tại.');
+        Alert.alert('Lỗi', 'Tài khoản hoặc mật khẩu không chính xác.');
       }
-      else {
-        // Xử lý tất cả các lỗi khác
-        Alert.alert('Lỗi', 'Đã xảy ra lỗi khi đăng nhập.');
-      }
+      
     }
   };
   
